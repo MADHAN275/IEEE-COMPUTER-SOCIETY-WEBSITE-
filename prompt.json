@@ -1,0 +1,355 @@
+{
+  "project": "IEEE Computer Society Professional Website",
+  "description": "Create a cutting-edge, professional website for IEEE Computer Society with stunning Three.js animations, React components, and an engaging user experience that showcases the organization's mission and leadership.",
+  
+  "tech_stack": {
+    "framework": "React with Next.js",
+    "3d_library": "Three.js with React Three Fiber (@react-three/fiber)",
+    "animation_libraries": [
+      "@react-three/drei",
+      "framer-motion",
+      "framer-motion-3d",
+      "gsap",
+      "lottie-react"
+    ],
+    "styling": "Tailwind CSS",
+    "additional_packages": [
+      "@react-three/postprocessing",
+      "three-stdlib",
+      "maath"
+    ]
+  },
+  
+  "color_scheme": {
+    "primary": "#F39019",
+    "primary_variants": ["#F7A347", "#E67E00", "#CC6F00"],
+    "secondary": "#FFFFFF",
+    "accent": "#1A1A1A",
+    "gradient": "linear-gradient(135deg, #F39019 0%, #F7A347 50%, #FFB84D 100%)",
+    "glow_effects": {
+      "orange_glow": "0 0 40px rgba(243, 144, 25, 0.6)",
+      "intense_glow": "0 0 80px rgba(243, 144, 25, 0.8), 0 0 120px rgba(243, 144, 25, 0.4)"
+    }
+  },
+  
+  "animations_required": {
+    "hero_section": {
+      "type": "Morphing 3D Sphere with Particle System",
+      "description": "A large glowing orange orb that morphs and pulses with particle effects floating around it. The orb should react to mouse movement with subtle distortions. Use noise functions for organic movement.",
+      "features": [
+        "Morphing geometry using vertex shaders",
+        "Particle system with 5000+ glowing particles",
+        "Mouse interaction with spring physics",
+        "Pulsating glow effect synced with a subtle 'heartbeat' animation",
+        "Floating motion using React Three Drei's Float component"
+      ]
+    },
+    
+    "background_effects": {
+      "wave_grid": "Create a subtle wave effect on a grid plane in the background using simplex noise",
+      "floating_elements": "Small geometric shapes (cubes, tetrahedrons, octahedrons) floating with different speeds",
+      "particle_connections": "Particles that connect with glowing lines when close to each other",
+      "gradient_fog": "Three.js fog with orange gradient for depth"
+    },
+    
+    "section_transitions": {
+      "scroll_triggered": "Use GSAP ScrollTrigger for smooth section reveals",
+      "parallax_layers": "Multiple layers moving at different speeds",
+      "fade_in_elements": "Stagger animations for text and images"
+    },
+    
+    "interactive_elements": {
+      "hover_effects": "3D tilt on cards, glowing borders, scale animations",
+      "button_animations": "Ripple effects, magnetic cursor following",
+      "navigation": "Liquid morphing between active states"
+    }
+  },
+  
+  "website_sections": {
+    "navigation": {
+      "style": "Fixed top navigation with glassmorphism effect",
+      "items": ["About", "Join IEEE", "Board", "Contact"],
+      "logo": "IEEE Computer Society logo with glow effect on hover",
+      "mobile_menu": "Fullscreen overlay with staggered link animations"
+    },
+    
+    "hero": {
+      "title": "IEEE Computer Society",
+      "subtitle": "Empowering the People Who Drive Technology",
+      "description": "Join over 375,000 computing professionals worldwide in advancing technology for the benefit of humanity",
+      "cta_buttons": [
+        {
+          "text": "Join Now",
+          "action": "Scroll to membership section",
+          "style": "Primary with pulsating glow"
+        },
+        {
+          "text": "Learn More",
+          "action": "Scroll to about section",
+          "style": "Secondary with border animation"
+        }
+      ],
+      "background": "The morphing 3D sphere with particle system"
+    },
+    
+    "about": {
+      "title": "About IEEE Computer Society",
+      "content": {
+        "mission": "To be the leading provider of technical information, community services, and personalized services to the world's computing professionals.",
+        "vision": "Be essential to the global technical community and computer professionals everywhere and be universally recognized for the contributions of technical professionals in developing and applying technology to improve global conditions.",
+        "key_points": [
+          "World's largest organization of computing professionals",
+          "Over 375,000 members in 150+ countries",
+          "Publisher of 23 peer-reviewed journals",
+          "Sponsor of 200+ technical conferences annually",
+          "Leader in computing standards development"
+        ]
+      },
+      "animation": "Animated counter numbers, floating icon grid showcasing different computing fields"
+    },
+    
+    "membership": {
+      "title": "Join IEEE Computer Society",
+      "benefits": [
+        {
+          "title": "Professional Development",
+          "description": "Access to cutting-edge research, conferences, and educational resources",
+          "icon": "3D rotating brain model"
+        },
+        {
+          "title": "Networking Opportunities",
+          "description": "Connect with 375,000+ professionals worldwide",
+          "icon": "Animated network graph"
+        },
+        {
+          "title": "Career Resources",
+          "description": "Job board, career center, and professional certifications",
+          "icon": "Rising bar chart animation"
+        },
+        {
+          "title": "Publications Access",
+          "description": "Computer magazine, ComputingEdge, and digital library",
+          "icon": "Floating book pages"
+        }
+      ],
+      "membership_tiers": [
+        {
+          "type": "Professional",
+          "benefits": ["Full access to all resources", "Conference discounts", "Voting rights"],
+          "animation": "Glowing card with parallax tilt"
+        },
+        {
+          "type": "Student",
+          "benefits": ["Reduced rates", "Career resources", "Student competitions"],
+          "animation": "Floating with bounce effect"
+        }
+      ],
+      "cta": "Animated join button with particle explosion on click"
+    },
+    
+    "board": {
+      "title": "Our Leadership Team",
+      "subtitle": "Meet the dedicated professionals driving IEEE Computer Society forward",
+      "layout": "Interactive 3D carousel with depth perspective",
+      "members": [
+        {
+          "name": "Mr. Fanisus R",
+          "position": "President",
+          "image": "PRESIDENT_Mr_FANISUS_R.jpg",
+          "priority": 1
+        },
+        {
+          "name": "Ms. D. Jerlin Seraphina",
+          "position": "Chair",
+          "image": "CHAIR Ms. D. JERLIN SERAPHINA.jpg",
+          "priority": 2
+        },
+        {
+          "name": "Ms. Charunetra NR",
+          "position": "Vice Chair",
+          "image": "VICE CHAIR Ms. CHARUNETRA NR.jpeg",
+          "priority": 3
+        },
+        {
+          "name": "Ms. Trina Joan Lynus",
+          "position": "Secretary",
+          "image": "SECRETARY Ms. TRINA JOAN LYNUS.jpg",
+          "priority": 4
+        },
+        {
+          "name": "Mr. Siva Sankar B",
+          "position": "Treasurer",
+          "image": "TREASURER Mr. SIVA SANKAR B.jpg",
+          "priority": 5
+        },
+        {
+          "name": "Mr. Adwaith Sajikumar",
+          "position": "Development Lead",
+          "image": "DEVELOPMENT LEAD Mr. ADWAITH SAJIKUMAR.jpg"
+        },
+        {
+          "name": "Mr. Madhan T",
+          "position": "Web Lead",
+          "image": "WEB LEAD Mr. MADHAN T.jpg"
+        },
+        {
+          "name": "Ms. Saro Franzika C S",
+          "position": "Technical Event Lead",
+          "image": "TECHNICAL EVENT LEAD Ms. SARO FRANZIKA C S.jpeg"
+        },
+        {
+          "name": "Mr. Anto Melvin A",
+          "position": "Program Lead",
+          "image": "PROGRAM LEAD Mr. ANTO MELVIN A.jpeg"
+        },
+        {
+          "name": "Ms. Nandana Nandakumar E N",
+          "position": "Training and Workshop Lead",
+          "image": "TRAINING AND WORKSHOP LEAD Ms. NANDANA NANDAKUMAR E N.PNG"
+        },
+        {
+          "name": "Mr. Rishi Jayanath A",
+          "position": "Innovation and Research Lead",
+          "image": "INNOVATION AND RESEARCH LEAD Mr. RISHI JAYANATH A.jpg"
+        },
+        {
+          "name": "Ms. Athira Arun",
+          "position": "Content Lead",
+          "image": "CONTENT LEAD Ms. ATHIRA ARUN.jpg"
+        },
+        {
+          "name": "Ms. Atishaya S I",
+          "position": "Newsletter and Magazine Lead",
+          "image": "NEWSLETTER AND MAGANIZE LEAD Ms. ATISHAYA S I.jpg"
+        },
+        {
+          "name": "Ms. Mershiya",
+          "position": "Social Media Lead",
+          "image": "SOCIAL MEDIA LEAD Ms. MERSHIYA.jpg"
+        },
+        {
+          "name": "Mr. Kingston Y C",
+          "position": "Poster and Video Editor",
+          "image": "POSTER AND VIDEO EDITOR Mr. KINGSTON Y C.jpg"
+        },
+        {
+          "name": "Ms. Lizania Dew K",
+          "position": "Documentation Lead",
+          "image": "DOCUMENTATION LEAD Ms. LIZANIA DEW K.jpg"
+        },
+        {
+          "name": "Mr. Harish R",
+          "position": "Membership Chair",
+          "image": "MEMBERSHIP CHAIR Mr. HARISH R.jpg"
+        },
+        {
+          "name": "Ms. Priya Dharshini S",
+          "position": "IEEE Interface Lead",
+          "image": "IEEE INTERFACE LEAD Ms. PRIYA DHARSHINI S.jpg"
+        },
+        {
+          "name": "Mr. Johann Shoni George",
+          "position": "Sponsorship and Partnership Lead",
+          "image": "SPONSORSHIP AND PARTNERSHIP LEAD Mr. JOHANN SHONI GEORGE.jpeg"
+        },
+        {
+          "name": "Mr. Febin K Renu",
+          "position": "Alumni and Industry Relation Lead",
+          "image": "ALUMNI AND INDUSTRY RELATION LEAD Mr. FEBIN K RENU.jpeg"
+        },
+        {
+          "name": "Mr. V Sremadukrishna",
+          "position": "Outreach & CSR Lead",
+          "image": "OUTREACH & CSR LEAD Mr. V SREMADUKRISHNA.jpg"
+        },
+        {
+          "name": "Ms. Jenefa Jeromi J",
+          "position": "Student Activities Coordinator",
+          "image": "STUDENT ACTIVITIES COORDINATOR Ms. JENEFA JEROMI J.jpg"
+        },
+        {
+          "name": "Mr. Joy James Swamy",
+          "position": "Volunteer Coordinator",
+          "image": "VOLUNTEER COORDINATOR Mr. JOY JAMES SWAMY.jpg"
+        },
+        {
+          "name": "Mr. Jason B",
+          "position": "Logistics Lead",
+          "image": "LOGISTICS LEAD Mr. JASON B.jpg"
+        },
+        {
+          "name": "Ms. Rebi Jael B",
+          "position": "Women in Engineering Lead",
+          "image": "WOMEN IN ENGINEERING LEAD Ms. REBI JAEL B.jpeg"
+        }
+      ],
+      "card_animation": {
+        "hover": "3D tilt with glow effect and subtle float",
+        "click": "Flip to show bio or additional info",
+        "entrance": "Staggered fade-in with spring physics"
+      }
+    },
+    
+    "contact": {
+      "title": "Get in Touch",
+      "form_fields": [
+        "Name",
+        "Email",
+        "Subject",
+        "Message"
+      ],
+      "animation": "Floating contact form with glassmorphism, input fields glow on focus",
+      "background": "Animated particle field that responds to form interactions",
+      "social_links": {
+        "style": "3D icons that rotate on hover",
+        "platforms": ["LinkedIn", "Twitter", "Facebook", "YouTube"]
+      }
+    }
+  },
+  
+  "special_effects": {
+    "cursor": {
+      "type": "Custom cursor with trail effect",
+      "interaction": "Magnetic attraction to interactive elements"
+    },
+    "page_transitions": {
+      "type": "Smooth morphing between sections",
+      "loading": "IEEE CS logo animation with particle assembly"
+    },
+    "easter_eggs": {
+      "konami_code": "Trigger a special animation showcasing IEEE CS achievements",
+      "logo_interaction": "Click logo 5 times for particle explosion"
+    }
+  },
+  
+  "performance_optimizations": [
+    "Use React.memo for component optimization",
+    "Implement LOD (Level of Detail) for 3D objects",
+    "Lazy load board member images",
+    "Use web workers for complex calculations",
+    "Implement requestAnimationFrame for smooth animations",
+    "Optimize particle count based on device performance"
+  ],
+  
+  "responsive_design": {
+    "breakpoints": {
+      "mobile": "Simplified 3D effects, reduced particle count",
+      "tablet": "Moderate complexity, touch-optimized interactions",
+      "desktop": "Full effects and animations"
+    },
+    "accessibility": {
+      "reduced_motion": "Provide static alternatives for users who prefer reduced motion",
+      "screen_readers": "Proper ARIA labels and semantic HTML",
+      "keyboard_navigation": "Full keyboard support for all interactive elements"
+    }
+  },
+  
+  "additional_features": [
+    "Dark mode toggle with smooth transition",
+    "Search functionality with animated results",
+    "Newsletter signup with particle celebration on success",
+    "Event calendar with 3D date visualization",
+    "Achievement badges with unlock animations",
+    "Member testimonials with carousel effect"
+  ]
+}

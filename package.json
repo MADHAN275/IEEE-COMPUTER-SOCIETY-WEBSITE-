@@ -1,0 +1,39 @@
+{
+  "name": "ieee-computer-society",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/swc-linux-x64-gnu": "^15.4.6",
+    "@react-three/drei": "^9.88.13",
+    "@react-three/fiber": "^8.15.11",
+    "@react-three/postprocessing": "^2.15.11",
+    "framer-motion": "^10.16.5",
+    "framer-motion-3d": "^10.16.5",
+    "gsap": "^3.12.2",
+    "lottie-react": "^2.4.0",
+    "maath": "^0.10.7",
+    "next": "14.0.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "three": "^0.179.1",
+    "three-stdlib": "^2.27.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/three": "^0.179.0",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  }
+}
