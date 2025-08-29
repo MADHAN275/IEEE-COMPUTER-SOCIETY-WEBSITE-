@@ -122,10 +122,10 @@ const Navigation = () => {
             >
               <div className="pt-20 px-6">
                 {navItems.map((item, index) => (
-                  <Link key={item.name} href={item.path}>
+                  <Link key={item.name} href={item.href}>
                     <motion.div
                       className={`block w-full text-left py-4 text-lg font-medium transition-colors cursor-pointer ${
-                        pathname === item.path 
+                        pathname === item.href 
                           ? 'text-primary' 
                           : 'text-white hover:text-primary'
                       }`}

@@ -15,6 +15,7 @@ const ContactSection = () => {
     message: ''
   })
   const [focusedField, setFocusedField] = useState<string | null>(null)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -27,6 +28,13 @@ const ContactSection = () => {
     e.preventDefault()
     console.log('Form submitted:', formData)
     // Add form submission logic here
+    setIsSubmitted(true)
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    })
   }
 
   const socialLinks = [
@@ -68,6 +76,15 @@ const ContactSection = () => {
           >
             <div className="glass p-8 rounded-3xl">
               <h3 className="text-3xl font-bold text-primary mb-8 text-center">Send us a Message</h3>
+              {isSubmitted && (
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="bg-green-500/20 border border-green-500 text-green-300 px-4 py-3 rounded-xl mb-6 text-center"
+                >
+                  <p>Your message has been sent successfully!</p>
+                </motion.div>
+              )}
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">

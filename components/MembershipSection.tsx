@@ -65,6 +65,7 @@ const StudentInfoForm = () => {
     department: ''
   })
   const [focusedField, setFocusedField] = useState<string | null>(null)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
@@ -77,6 +78,16 @@ const StudentInfoForm = () => {
     e.preventDefault()
     console.log('Student info submitted:', formData)
     // Add form submission logic here
+    setIsSubmitted(true)
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      registrationNumber: '',
+      year: '',
+      department: ''
+    })
   }
 
   const years = ['1st Year', '2nd Year', '3rd Year', '4th Year']
@@ -92,6 +103,15 @@ const StudentInfoForm = () => {
     >
       <div className="glass p-8 rounded-3xl">
         <h3 className="text-3xl font-bold text-primary mb-8 text-center">Student Information</h3>
+        {isSubmitted && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-green-500/20 border border-green-500 text-green-300 px-4 py-3 rounded-xl mb-6 text-center"
+          >
+            <p>Thank you for registering! We will get back to you shortly.</p>
+          </motion.div>
+        )}
         
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">

@@ -38,7 +38,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-6xl md:text-8xl font-bold mb-6 bg-primary-gradient bg-clip-text text-transparent"
+          className="text-5xl sm:text-6xl md:text-8xl font-bold mb-6 bg-primary-gradient bg-clip-text text-transparent"
         >
           IEEE Computer Society KITS
         </motion.h1>
@@ -47,7 +47,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.7 }}
-          className="text-2xl md:text-3xl font-semibold mb-4 text-white"
+          className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-white"
         >
           Empowering the People Who Drive Technology
         </motion.p>
@@ -56,7 +56,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.9 }}
-          className="text-lg md:text-xl mb-8 text-gray-300 max-w-2xl mx-auto"
+          className="text-base sm:text-lg md:text-xl mb-8 text-gray-300 max-w-2xl mx-auto"
         >
           Join over 375,000 computing professionals worldwide in advancing technology for the benefit of humanity
         </motion.p>
@@ -68,7 +68,7 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <motion.button
-            className="interactive px-8 py-4 bg-primary-gradient text-black font-semibold rounded-full text-lg shadow-orange-glow hover:shadow-orange-intense transform transition-all duration-300"
+            className="interactive w-full sm:w-auto px-8 py-4 bg-primary-gradient text-black font-semibold rounded-full text-lg shadow-orange-glow hover:shadow-orange-intense transform transition-all duration-300"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => router.push('/membership')}
@@ -82,7 +82,7 @@ const HeroSection = () => {
           </motion.button>
 
           <motion.button
-            className="interactive px-8 py-4 border-2 border-primary text-primary font-semibold rounded-full text-lg hover:bg-primary hover:text-black transition-all duration-300"
+            className="interactive w-full sm:w-auto px-8 py-4 border-2 border-primary text-primary font-semibold rounded-full text-lg hover:bg-primary hover:text-black transition-all duration-300"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => router.push('/about')}

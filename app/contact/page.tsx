@@ -2,13 +2,11 @@
 
 import Navigation from '@/components/Navigation'
 import ContactSection from '@/components/ContactSection'
-import CustomCursor from '@/components/CustomCursor'
 
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-black text-white relative">
       <Navigation />
-      <CustomCursor />
       
       <div className="pt-20">
         <ContactSection />

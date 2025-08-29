@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import BoardCarousel3D from './3D/BoardCarousel3D'
+import Link from 'next/link'
 
 interface BoardMember {
   name: string
@@ -122,6 +123,8 @@ const BoardSection = () => {
   const sortedMembers = boardMembers.sort((a, b) => (a.priority || 0) - (b.priority || 0))
   const facultyMembers = sortedMembers.filter(m => m.priority && m.priority <= 2)
   const studentMembers = sortedMembers.filter(m => m.priority && m.priority > 2)
+  const executiveMembers = studentMembers.slice(0, 5)
+  const teamLeadMembers = studentMembers.slice(5)
 
   return (
     <section id="board" className="py-20 px-4 relative overflow-hidden">
@@ -170,15 +173,36 @@ const BoardSection = () => {
           transition={{ duration: 1, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-3xl font-bold text-center mb-8 text-primary">Student Board Members</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {studentMembers.map((member, index) => (
+          <h3 className="text-3xl font-bold text-center mb-8 text-primary">Executive Board</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            {executiveMembers.map((member, index) => (
               <BoardMemberCard
-                key={`student-${index}`}
+                key={`executive-${index}`}
                 member={member}
                 index={index + facultyMembers.length}
                 isActive={activeIndex === index + facultyMembers.length}
                 onClick={() => setActiveIndex(index + facultyMembers.length)}
+              />
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-12"
+        >
+          <h3 className="text-3xl font-bold text-center mb-8 text-primary">Team Leads</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {teamLeadMembers.map((member, index) => (
+              <BoardMemberCard
+                key={`team-lead-${index}`}
+                member={member}
+                index={index + facultyMembers.length + executiveMembers.length}
+                isActive={activeIndex === index + facultyMembers.length + executiveMembers.length}
+                onClick={() => setActiveIndex(index + facultyMembers.length + executiveMembers.length)}
               />
             ))}
           </div>
@@ -194,13 +218,15 @@ const BoardSection = () => {
           <p className="text-gray-300 text-lg mb-6">
             Interested in joining our leadership team?
           </p>
-          <motion.button
-            className="interactive px-8 py-3 bg-primary-gradient text-black font-semibold rounded-full hover:shadow-orange-glow transition-all duration-300"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get Involved
-          </motion.button>
+          <Link href="/membership">
+            <motion.button
+              className="interactive px-8 py-3 bg-primary-gradient text-black font-semibold rounded-full hover:shadow-orange-glow transition-all duration-300"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Get Involved
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -2,13 +2,11 @@
 
 import Navigation from '@/components/Navigation'
 import BoardSection from '@/components/BoardSection'
-import CustomCursor from '@/components/CustomCursor'
 
 export default function BoardPage() {
   return (
     <main className="min-h-screen bg-black text-white relative">
       <Navigation />
-      <CustomCursor />
       
       <div className="pt-20">
         <BoardSection />

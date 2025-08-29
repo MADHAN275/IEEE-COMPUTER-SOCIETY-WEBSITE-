@@ -19,7 +19,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div id="custom-cursor" className="custom-cursor"></div>
         {children}
       </body>
     </html>
