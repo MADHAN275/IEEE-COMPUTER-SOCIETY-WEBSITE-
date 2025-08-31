@@ -75,6 +75,8 @@ const BrainEmoji3D = () => {
     return new Float32Array(positions)
   }, [])
 
+  const particleAttribute = useMemo(() => new THREE.BufferAttribute(particlePositions, 3), [particlePositions]);
+
   return (
     <group ref={brainRef}>
       {/* Main Brain Body */}
@@ -206,18 +208,11 @@ const BrainEmoji3D = () => {
       {/* Neural Activity Particles */}
       <points ref={particlesRef}>
         <bufferGeometry>
-          <bufferAttribute
-            attach="attributes-position"
-            count={particlePositions.length / 3}
-            array={particlePositions}
-            itemSize={3}
-          />
+          <primitive object={particleAttribute} attach="attributes-position" />
         </bufferGeometry>
         <pointsMaterial
           size={0.02}
           color="#00CED1"
-          emissive="#00CED1"
-          emissiveIntensity={0.5}
           transparent
           opacity={0.6}
           blending={THREE.AdditiveBlending}

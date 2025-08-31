@@ -5,6 +5,13 @@ import { useFrame } from '@react-three/fiber'
 import { Box } from '@react-three/drei'
 import * as THREE from 'three'
 
+interface Book {
+  color: string;
+  position: [number, number, number];
+  rotation: [number, number, number];
+  thickness: number;
+}
+
 const BooksEmoji3D = () => {
   const booksRef = useRef<THREE.Group>(null)
   const bookRefs = useRef<THREE.Mesh[]>([])
@@ -29,7 +36,7 @@ const BooksEmoji3D = () => {
     }
   })
 
-  const books = [
+  const books: Book[] = [
     { color: '#E53E3E', position: [-0.6, -0.3, 0], rotation: [0, 0.1, 0], thickness: 0.3 },
     { color: '#3182CE', position: [0, -0.1, -0.1], rotation: [0, 0, 0], thickness: 0.35 },
     { color: '#38A169', position: [0.6, -0.2, 0.1], rotation: [0, -0.1, 0], thickness: 0.25 },
