@@ -300,7 +300,7 @@ const MembershipSection = () => {
 
 
   return (
-    <section id="join-ieee" className="py-20 px-4 relative overflow-hidden">
+    <section id="membership" className="py-20 px-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}
@@ -310,10 +310,10 @@ const MembershipSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-primary-gradient bg-clip-text text-transparent">
-            Join IEEE Computer Society KITS
+            JOIN IEEE COMPUTER SOCIETY KITS
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Unlock your potential and advance your career with the world's premier computing professional organization
+            Unlock your potential and advance your career with the world&apos;s premier computing professional organization
           </p>
         </motion.div>
 

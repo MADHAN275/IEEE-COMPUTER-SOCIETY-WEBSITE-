@@ -1,18 +1,32 @@
+
 'use client'
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('home')
   const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
+
+      const sections = ['home', 'about', 'membership', 'events', 'board', 'contact']
+      const scrollPosition = window.scrollY + window.innerHeight / 2
+
+      for (const section of sections) {
+        const element = document.getElementById(section)
+        if (element && scrollPosition >= element.offsetTop && scrollPosition < element.offsetTop + element.offsetHeight) {
+          setActiveSection(section)
+          break
+        }
+      }
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -20,12 +34,21 @@ const Navigation = () => {
   }, [])
 
   const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Membership', href: '/membership' },
-    { name: 'Board', href: '/board' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Membership', href: '#membership' },
+    { name: 'Events', href: '#events' },
+    { name: 'Board', href: '#board' },
+    { name: 'Contact', href: '#contact' }
   ]
+
+  const handleNavClick = (e: React.MouseEvent<HTMLDivElement>, href: string) => {
+    e.preventDefault()
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+    if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false)
+    }
+  }
 
   return (
     <>
@@ -40,51 +63,55 @@ const Navigation = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <Link href="/">
+            <div
+              className="flex items-center cursor-pointer space-x-3"
+              onClick={(e) => handleNavClick(e, '#home')}
+            >
+              
               <motion.div
-                className="flex items-center cursor-pointer space-x-3"
                 whileHover={{ scale: 1.05 }}
               >
-                <img 
-                  src="/IEEE LOGO.png" 
-                  alt="IEEE Logo" 
+                <Image
+                  src="/IEEE LOGO.png"
+                  alt="IEEE Logo"
+                  width={40}
+                  height={40}
                   className="h-10 w-10 object-contain"
                 />
-                <div className="text-2xl font-bold bg-primary-gradient bg-clip-text text-transparent">
-                  IEEE CS KITS
-                </div>
               </motion.div>
-            </Link>
+              <div className="text-2xl font-bold bg-primary-gradient bg-clip-text text-transparent">
+                IEEE CS KITS
+              </div>
+            </div>
 
             <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
+              <div className="flex items-baseline space-x-8">
                 {navItems.map((item, index) => (
-                  <Link key={item.name} href={item.href}>
+                  <motion.div
+                    key={item.name}
+                    className={`relative px-3 py-2 text-sm font-bold uppercase transition-colors duration-300 cursor-pointer ${
+                      activeSection === item.href.substring(1)
+                        ? 'bg-primary-gradient bg-clip-text text-transparent' 
+                        : 'text-white hover:text-primary'
+                    }`}
+                    whileHover={{ scale: 1.05 }}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    onClick={(e) => handleNavClick(e, item.href)}
+                  >
+                    {item.name}
                     <motion.div
-                      className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 cursor-pointer ${
-                        pathname === item.href 
-                          ? 'text-primary' 
-                          : 'text-white hover:text-primary'
-                      }`}
-                      whileHover={{ scale: 1.05 }}
-                      initial={{ opacity: 0, y: -20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                    >
-                      {item.name}
-                      <motion.div
-                        className="absolute bottom-0 left-0 h-0.5 bg-primary-gradient"
-                        initial={{ width: pathname === item.href ? '100%' : 0 }}
-                        whileHover={{ width: '100%' }}
-                        transition={{ duration: 0.3 }}
-                      />
-                    </motion.div>
-                  </Link>
+                      className="absolute bottom-0 left-0 h-0.5 bg-primary-gradient"
+                      animate={{ width: activeSection === item.href.substring(1) ? '100%' : 0 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </motion.div>
                 ))}
               </div>
             </div>
 
-            <div className="md:hidden">
+            <div className="md:hidden ml-auto">
               <button
                 className="text-white p-2"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -122,21 +149,20 @@ const Navigation = () => {
             >
               <div className="pt-20 px-6">
                 {navItems.map((item, index) => (
-                  <Link key={item.name} href={item.href}>
-                    <motion.div
-                      className={`block w-full text-left py-4 text-lg font-medium transition-colors cursor-pointer ${
-                        pathname === item.href 
-                          ? 'text-primary' 
-                          : 'text-white hover:text-primary'
-                      }`}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {item.name}
-                    </motion.div>
-                  </Link>
+                  <motion.div
+                    key={item.name}
+                    className={`block w-full text-left py-4 text-lg font-bold uppercase transition-colors cursor-pointer ${
+                      activeSection === item.href.substring(1)
+                        ? 'bg-primary-gradient bg-clip-text text-transparent' 
+                        : 'text-white hover:text-primary'
+                    }`}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    onClick={(e) => handleNavClick(e, item.href)}
+                  >
+                    {item.name}
+                  </motion.div>
                 ))}
               </div>
             </motion.div>

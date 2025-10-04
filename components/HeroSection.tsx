@@ -18,7 +18,7 @@ const HeroSection = () => {
   }
 
   return (
-    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Canvas
           camera={{ position: [0, 0, 5], fov: 75 }}
@@ -40,7 +40,7 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.5 }}
           className="text-5xl sm:text-6xl md:text-8xl font-bold mb-6 bg-primary-gradient bg-clip-text text-transparent"
         >
-          IEEE Computer Society KITS
+          IEEE COMPUTER SOCIETY KITS
         </motion.h1>
 
         <motion.p
@@ -49,16 +49,7 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.7 }}
           className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-white"
         >
-          Empowering the People Who Drive Technology
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.9 }}
-          className="text-base sm:text-lg md:text-xl mb-8 text-gray-300 max-w-2xl mx-auto"
-        >
-          Join over 375,000 computing professionals worldwide in advancing technology for the benefit of humanity
+          EMPOWERING THE PEOPLE WHO DRIVE TECHNOLOGY
         </motion.p>
 
         <motion.div
@@ -71,7 +62,7 @@ const HeroSection = () => {
             className="interactive w-full sm:w-auto px-8 py-4 bg-primary-gradient text-black font-semibold rounded-full text-lg shadow-orange-glow hover:shadow-orange-intense transform transition-all duration-300"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => router.push('/membership')}
+            onClick={() => scrollToSection('membership')}
           >
             Join Now
             <motion.div
@@ -85,7 +76,7 @@ const HeroSection = () => {
             className="interactive w-full sm:w-auto px-8 py-4 border-2 border-primary text-primary font-semibold rounded-full text-lg hover:bg-primary hover:text-black transition-all duration-300"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => router.push('/about')}
+            onClick={() => scrollToSection('about')}
           >
             Learn More
           </motion.button>

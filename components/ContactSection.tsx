@@ -61,10 +61,10 @@ const ContactSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-primary-gradient bg-clip-text text-transparent">
-            Get in Touch
+            GET IN TOUCH
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Ready to join the IEEE Computer Society KITS community? We'd love to hear from you.
+            Ready to join the IEEE Computer Society KITS community? We&apos;d love to hear from you.
           </p>
         </motion.div>
 
@@ -75,7 +75,7 @@ const ContactSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="glass p-8 rounded-3xl">
-              <h3 className="text-3xl font-bold text-primary mb-8 text-center">Send us a Message</h3>
+              <h3 className="text-3xl font-bold text-primary mb-8 text-center">SEND US A MESSAGE</h3>
               {isSubmitted && (
                 <motion.div
                   initial={{ opacity: 0, y: -20 }}
@@ -202,12 +202,12 @@ const ContactSection = () => {
             className="space-y-8"
           >
             <div className="glass p-8 rounded-3xl">
-              <h3 className="text-2xl font-bold text-primary mb-6">Faculty Counselor</h3>
+              <h3 className="text-2xl font-bold text-primary mb-6">FACULTY COUNSELOR</h3>
               
               <div className="space-y-4 mb-8">
                 <div>
                   <p className="text-white font-semibold text-lg">Dr. Naveen Sundar</p>
-                  <p className="text-gray-300">Faculty Counselor</p>
+                  <p className="text-gray-300">FACULTY COUNSELOR</p>
                 </div>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3">
@@ -225,7 +225,7 @@ const ContactSection = () => {
             </div>
 
             <div className="glass p-8 rounded-3xl mt-8">
-              <h3 className="text-2xl font-bold text-primary mb-6">Student Coordinators</h3>
+              <h3 className="text-2xl font-bold text-primary mb-6">STUDENT COORDINATORS</h3>
               
               <div className="space-y-6">
                 <div className="border-b border-gray-700 pb-4">
@@ -270,7 +270,7 @@ const ContactSection = () => {
             </div>
 
             <div className="glass p-8 rounded-3xl">
-              <h3 className="text-2xl font-bold text-primary mb-6">Follow Us</h3>
+              <h3 className="text-2xl font-bold text-primary mb-6">FOLLOW US</h3>
               
               <div className="grid grid-cols-2 gap-4">
                 {socialLinks.map((social, index) => (
