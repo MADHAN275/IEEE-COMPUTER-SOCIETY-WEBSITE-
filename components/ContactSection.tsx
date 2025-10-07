@@ -276,6 +276,8 @@ const ContactSection = () => {
                   <motion.a
                     key={social.name}
                     href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="interactive flex items-center p-4 glass rounded-xl hover:shadow-orange-glow transition-all duration-300 group"
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
