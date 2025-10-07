@@ -40,7 +40,7 @@ const ContactSection = () => {
   const socialLinks = [
     { name: 'LinkedIn', icon: '💼', url: '#' },
     { name: 'Twitter', icon: '🐦', url: '#' },
-    { name: 'Facebook', icon: '📘', url: '#' },
+    
     { name: 'YouTube', icon: '📺', url: '#' }
   ]
 
