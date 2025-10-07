@@ -11,7 +11,7 @@ import ContactSection from '@/components/ContactSection'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white relative">
+    <main className="min-h-screen bg-black text-white relative w-full">
       <Navigation />
       <HeroSection />
       <AboutSection />
