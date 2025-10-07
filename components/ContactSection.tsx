@@ -38,10 +38,9 @@ const ContactSection = () => {
   }
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: '💼', url: '#' },
-    { name: 'Twitter', icon: '🐦', url: '#' },
-    
-    { name: 'YouTube', icon: '📺', url: '#' }
+    { name: 'LinkedIn', icon: '💼', url: 'https://in.linkedin.com/in/karunya-ieee-computer-society' },
+    { name: 'Instagram', icon: '📸', url: 'https://www.instagram.com/karunya_comp_soc?igsh=MXpsdTc2OXBybnV6' },
+    { name: 'YouTube', icon: '📺', url: 'https://youtube.com/@karunyaieeecomputersociety?feature=shared' }
   ]
 
   return (
