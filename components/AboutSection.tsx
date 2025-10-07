@@ -8,52 +8,6 @@ import FloatingIcons from './3D/FloatingIcons'
 const AboutSection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
-  const [counters, setCounters] = useState({
-    members: 0,
-    countries: 0,
-    journals: 0,
-    conferences: 0,
-  })
-
-  useEffect(() => {
-    const finalCounts = {
-      members: 375000,
-      countries: 150,
-      journals: 23,
-      conferences: 200,
-    }
-    if (isInView) {
-      const duration = 2000
-      const steps = 60
-      const increment = duration / steps
-
-      Object.keys(finalCounts).forEach((key) => {
-        let current = 0
-        const target = finalCounts[key as keyof typeof finalCounts]
-        const stepValue = target / steps
-
-        const timer = setInterval(() => {
-          current += stepValue
-          if (current >= target) {
-            current = target
-            clearInterval(timer)
-          }
-          setCounters(prev => ({
-            ...prev,
-            [key]: Math.floor(current)
-          }))
-        }, increment)
-      })
-    }
-  }, [isInView])
-
-  const keyPoints = [
-    "World's largest organization of computing professionals",
-    "Over 375,000 members in 150+ countries",
-    "Publisher of 23 peer-reviewed journals",
-    "Sponsor of 200+ technical conferences annually",
-    "Leader in computing standards development"
-  ]
 
   return (
     <section id="about" className="py-20 px-4 relative overflow-hidden">
@@ -72,92 +26,44 @@ const AboutSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-primary-gradient bg-clip-text text-transparent">
-            ABOUT IEEE COMPUTER SOCIETY KITS
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-primary-gradient bg-clip-text text-transparent">
+            ABOUT IEEE COMPUTER SOCIETY
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-1 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-semibold mb-4 text-primary">Our Mission</h3>
-            <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-              To be the leading provider of technical information, community services, and personalized services to the world&apos;s computing professionals.
+            <p className="text-gray-300 text-base mb-8 leading-relaxed">
+              The IEEE Computer Society is a global leader in advancing computing technology, research, and innovation. Since its establishment in 1946, it has been the trusted voice and community for computer scientists, engineers, and technology professionals worldwide. Through its vast network, technical publications, conferences, and educational resources, IEEE CS continues to shape the evolution of computing and inspire technological excellence across disciplines.
+            </p>
+            <p className="text-gray-300 text-base mb-8 leading-relaxed">
+              Driven by the mission to empower professionals and students alike, IEEE CS focuses on fostering innovation in areas such as Artificial Intelligence, Data Science, Software Engineering, and Cybersecurity. It provides a platform for knowledge exchange, professional development, and collaboration to solve real-world technological challenges.
             </p>
 
-            <h3 className="text-2xl font-semibold mb-4 text-primary">Our Vision</h3>
-            <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-              Be essential to the global technical community and computer professionals everywhere and be universally recognized for the contributions of technical professionals in developing and applying technology to improve global conditions.
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-primary-gradient bg-clip-text text-transparent">
+                ABOUT IEEE COMPUTER SOCIETY KITS
+              </h2>
+            </motion.div>
+
+            <p className="text-gray-300 text-base mb-8 leading-relaxed">
+              The IEEE Computer Society at Karunya Institute of Technology and Sciences is a vibrant platform dedicated to nurturing innovation, creativity, and research in the field of computing and technology. Established with the vision of promoting technical excellence and global exposure, IEEE CS KITS encourages students and faculty to engage in continuous learning, collaborative projects, and emerging technological trends.
             </p>
-
-            <div className="space-y-4">
-              {keyPoints.map((point, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                  className="flex items-center"
-                >
-                  <div className="w-2 h-2 bg-primary rounded-full mr-4 flex-shrink-0" />
-                  <p className="text-gray-300">{point}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
-          >
-            <motion.div
-              className="glass p-6 rounded-2xl text-center"
-              whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                {counters.members.toLocaleString()}+
-              </div>
-              <div className="text-gray-300">Members Worldwide</div>
-            </motion.div>
-
-            <motion.div
-              className="glass p-6 rounded-2xl text-center"
-              whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                {counters.countries}+
-              </div>
-              <div className="text-gray-300">Countries</div>
-            </motion.div>
-
-            <motion.div
-              className="glass p-6 rounded-2xl text-center"
-              whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                {counters.journals}
-              </div>
-              <div className="text-gray-300">Peer-reviewed Journals</div>
-            </motion.div>
-
-            <motion.div
-              className="glass p-6 rounded-2xl text-center"
-              whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                {counters.conferences}+
-              </div>
-              <div className="text-gray-300">Technical Conferences</div>
-            </motion.div>
+            <p className="text-gray-300 text-base mb-8 leading-relaxed">
+              By organizing technical sessions, coding challenges, expert lectures, and innovation-driven events, IEEE CS KITS creates opportunities for members to expand their skills and contribute to impactful technological advancements. The society serves as a bridge between academia and industry, fostering a spirit of inquiry, collaboration, and professional growth.
+            </p>
+            <p className="text-gray-300 text-base mb-8 leading-relaxed">
+              Guided by the principles of the IEEE and the mission of KITS, the IEEE Computer Society KITS stands as a hub of knowledge, innovation, and leadership — empowering the KITS community to shape the future of technology with purpose and excellence.
+            </p>
           </motion.div>
         </div>
       </div>

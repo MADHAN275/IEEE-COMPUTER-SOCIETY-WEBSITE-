@@ -59,10 +59,10 @@ const ContactSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-primary-gradient bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-primary-gradient bg-clip-text text-transparent">
             GET IN TOUCH
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Ready to join the IEEE Computer Society KITS community? We&apos;d love to hear from you.
           </p>
         </motion.div>
@@ -86,7 +86,7 @@ const ContactSection = () => {
               )}
               
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -201,75 +201,75 @@ const ContactSection = () => {
             className="space-y-8"
           >
             <div className="glass p-8 rounded-3xl">
-              <h3 className="text-2xl font-bold text-primary mb-6">FACULTY COUNSELOR</h3>
+              <h3 className="text-xl font-bold text-primary mb-6">FACULTY COUNSELOR</h3>
               
               <div className="space-y-4 mb-8">
                 <div>
-                  <p className="text-white font-semibold text-lg">Dr. Naveen Sundar</p>
-                  <p className="text-gray-300">FACULTY COUNSELOR</p>
+                  <p className="text-white font-semibold text-base">Dr. Naveen Sundar</p>
+                  <p className="text-gray-300 text-sm">FACULTY COUNSELOR</p>
                 </div>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3">
                     <span className="text-xl">📧</span>
                   </div>
-                  <p className="text-gray-300">naveensundhar@karunya.edu.in</p>
+                  <p className="text-gray-300 text-sm">naveensundhar@karunya.edu.in</p>
                 </div>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3">
                     <span className="text-xl">📞</span>
                   </div>
-                  <p className="text-gray-300">+91 9843166880</p>
+                  <p className="text-gray-300 text-sm">+91 9843166880</p>
                 </div>
               </div>
             </div>
 
             <div className="glass p-8 rounded-3xl mt-8">
-              <h3 className="text-2xl font-bold text-primary mb-6">STUDENT COORDINATORS</h3>
+              <h3 className="text-xl font-bold text-primary mb-6">STUDENT COORDINATORS</h3>
               
               <div className="space-y-6">
                 <div className="border-b border-gray-700 pb-4">
-                  <p className="text-white font-semibold">Ms. Fanisus R</p>
+                  <p className="text-white font-semibold text-base">Ms. Fanisus R</p>
                   <p className="text-primary text-sm mb-2">President</p>
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-sm">📧</span>
-                    <p className="text-gray-300 text-sm">fanisusr@karunya.edu.in</p>
+                    <p className="text-gray-300 text-xs">fanisusr@karunya.edu.in</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-sm">📞</span>
-                    <p className="text-gray-300 text-sm">+91 6382468758</p>
+                    <p className="text-gray-300 text-xs">+91 6382468758</p>
                   </div>
                 </div>
 
                 <div className="border-b border-gray-700 pb-4">
-                  <p className="text-white font-semibold">Ms. D Jerlin Seraphina</p>
+                  <p className="text-white font-semibold text-base">Ms. D Jerlin Seraphina</p>
                   <p className="text-primary text-sm mb-2">Chair</p>
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-sm">📧</span>
-                    <p className="text-gray-300 text-sm">djerlin@karunya.edu.in</p>
+                    <p className="text-gray-300 text-xs">djerlin@karunya.edu.in</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-sm">📞</span>
-                    <p className="text-gray-300 text-sm">+91 9384423577</p>
+                    <p className="text-gray-300 text-xs">+91 9384423577</p>
                   </div>
                 </div>
 
                 <div>
-                  <p className="text-white font-semibold">Mr. Madhan T</p>
+                  <p className="text-white font-semibold text-base">Mr. Madhan T</p>
                   <p className="text-primary text-sm mb-2">Web Lead</p>
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-sm">📧</span>
-                    <p className="text-gray-300 text-sm">madhant@karunya.edu.in</p>
+                    <p className="text-gray-300 text-xs">madhant@karunya.edu.in</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-sm">📞</span>
-                    <p className="text-gray-300 text-sm">+91 9080688119</p>
+                    <p className="text-gray-300 text-xs">+91 9080688119</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="glass p-8 rounded-3xl">
-              <h3 className="text-2xl font-bold text-primary mb-6">FOLLOW US</h3>
+              <h3 className="text-xl font-bold text-primary mb-6">FOLLOW US</h3>
               
               <div className="grid grid-cols-2 gap-4">
                 {socialLinks.map((social, index) => (

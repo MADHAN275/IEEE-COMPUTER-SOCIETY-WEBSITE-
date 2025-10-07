@@ -18,7 +18,7 @@ const HeroSection = () => {
   }
 
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative flex items-center justify-center h-screen">
       <div className="absolute inset-0 z-0">
         <Canvas
           camera={{ position: [0, 0, 5], fov: 75 }}
@@ -38,7 +38,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-5xl sm:text-6xl md:text-8xl font-bold mb-6 bg-primary-gradient bg-clip-text text-transparent"
+          className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 bg-primary-gradient bg-clip-text text-transparent"
         >
           IEEE COMPUTER SOCIETY KITS
         </motion.h1>
@@ -47,7 +47,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.7 }}
-          className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-white"
+          className="text-lg sm:text-2xl md:text-3xl font-semibold mb-4 text-white"
         >
           EMPOWERING THE PEOPLE WHO DRIVE TECHNOLOGY
         </motion.p>
@@ -59,7 +59,7 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <motion.button
-            className="interactive w-full sm:w-auto px-8 py-4 bg-primary-gradient text-black font-semibold rounded-full text-lg shadow-orange-glow hover:shadow-orange-intense transform transition-all duration-300"
+            className="interactive w-auto px-6 py-4 bg-primary-gradient text-black font-semibold rounded-full text-lg shadow-orange-glow hover:shadow-orange-intense transform transition-all duration-300"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => scrollToSection('membership')}
@@ -73,7 +73,7 @@ const HeroSection = () => {
           </motion.button>
 
           <motion.button
-            className="interactive w-full sm:w-auto px-8 py-4 border-2 border-primary text-primary font-semibold rounded-full text-lg hover:bg-primary hover:text-black transition-all duration-300"
+            className="interactive w-auto px-6 py-4 border-2 border-primary text-primary font-semibold rounded-full text-lg hover:bg-primary hover:text-black transition-all duration-300"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => scrollToSection('about')}

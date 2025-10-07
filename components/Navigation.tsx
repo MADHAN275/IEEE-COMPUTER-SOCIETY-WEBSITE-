@@ -144,14 +144,14 @@ const Navigation = () => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="absolute right-0 top-0 h-full w-64 glass shadow-2xl"
+              className="absolute right-0 top-0 h-full w-80 glass shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="pt-20 px-6">
                 {navItems.map((item, index) => (
                   <motion.div
                     key={item.name}
-                    className={`block w-full text-left py-4 text-lg font-bold uppercase transition-colors cursor-pointer ${
+                    className={`block w-full text-left py-5 text-xl font-bold uppercase transition-colors cursor-pointer ${
                       activeSection === item.href.substring(1)
                         ? 'bg-primary-gradient bg-clip-text text-transparent' 
                         : 'text-white hover:text-primary'
