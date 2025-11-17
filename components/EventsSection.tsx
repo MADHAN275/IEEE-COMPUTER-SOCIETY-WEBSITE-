@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import Link from 'next/link'
 
 
 const EventsSection = () => {
@@ -8,7 +9,7 @@ const EventsSection = () => {
 
     const pastEvents = [
     {
-      title: "VISUAL INTELIGENCE",
+      title: "VISUAL INTELLIGENCE",
       date: "04.09.2025",
       image: "/VISUAL.png"
     },
@@ -23,7 +24,7 @@ const EventsSection = () => {
       image: "/CODE QUEST.png"
     },
     {
-      title: "MIND SYNC",
+      title: "MINDSYNC",
       date: "12.09.2025",
       image: "/mindsync.png"
     },
@@ -33,7 +34,7 @@ const EventsSection = () => {
       image: "/NETWORK QUEST.png"
     },
     {
-      title: "IEEE COMPUTER SOCIETY INAUGURATION CEREMONY",
+      title: "IEEE INAUGURATION 2025",
       date: "12.08.2025",
       image: "/INAUGURATION.png"
     }
@@ -56,20 +57,21 @@ const EventsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {pastEvents.sort((a, b) => new Date(b.date.split('.').reverse().join('-')).getTime() - new Date(a.date.split('.').reverse().join('-')).getTime()).map((event, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-              className="glass p-8 rounded-2xl flex flex-col h-full"
-              whileHover={{ scale: 1.05, y: -10 }}
-            >
-              <div className="mb-4">
-                <img src={event.image} alt={event.title} className="w-full rounded-lg" />
-              </div>
-              <h3 className="text-xl font-bold text-primary mb-3">{event.title}</h3>
-              <p className="text-gray-400 font-semibold mb-4">{event.date}</p>
-            </motion.div>
+            <Link key={index} href={`/events/${event.title.toLowerCase().replace(/ /g, '-')}`}>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                className="glass p-8 rounded-2xl flex flex-col h-full cursor-pointer"
+                whileHover={{ scale: 1.05, y: -10 }}
+              >
+                <div className="mb-4">
+                  <img src={event.image} alt={event.title} className="w-full rounded-lg" />
+                </div>
+                <h3 className="text-xl font-bold text-primary mb-3">{event.title}</h3>
+                <p className="text-gray-400 font-semibold mb-4">{event.date}</p>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>

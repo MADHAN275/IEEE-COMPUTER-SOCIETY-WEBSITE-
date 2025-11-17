@@ -16,74 +16,85 @@ const EventDetailsPage = () => {
 
 
   const eventDetails = {
-    'COMPOSE THE FUTURE': {
-      title: 'COMPOSE THE FUTURE',
-      date: '12.09.2025',
-      description: `Event Overview
-The event “Compose the Future – The Rise of AI Song Creation” was organized under the banner of IEEE. It provided a platform for participants to explore the emerging intersection of Artificial Intelligence and music creation. Using AI tools such as Suno AI, Music Full, Music GPT, Mureka AI, and Udio AI, participants were tasked with generating original songs that aligned with the event’s theme.The event was designed to showcase how AI can be leveraged in the creative domain, specifically in songwriting, while highlighting innovation, originality, and technical skill.
-
-Objectives
-To encourage participants to understand and utilize AI tools in creative arts, particularly music generation.
-
-To promote creativity, originality, and ethical use of AI-generated content.
-
-To align musical compositions with the futuristic theme of “Karunya 4.0: Engineering a Harmonious Future.”
-
-To evaluate participants based on musicality, technical quality, and thematic relevance.
-
-To foster innovative thinking among students and introduce them to AI’s role in shaping the future of the music industry.
-Outcomes
-Participants successfully created AI-generated songs that reflected the given theme.
-
-The event encouraged bold and unique ideas, demonstrating AI’s potential in storytelling and music arrangement.
-
-Students gained hands-on experience with cutting-edge AI music tools, enhancing their technical and creative skills.
-
-The event highlighted the importance of originality and ethics in AI-driven creativity.
-
-A greater awareness was created about the role of AI in future innovations and creative.
-
-Other Relevant Details
-The event was conducted as a flagship technical activity under the IEEE Day celebrations.
-Participants coded exclusively in C, focusing on core programming fundamentals.
-Evaluation criteria included correctness, efficiency, and problem-solving ability.
-The interactive environment encouraged peer learning and active participation, aligning with IEEE’s vision of advancing technology for humanity.`,
-      image: '/COMPOSE THE FUTURE.png',
-      participants: 120,
-      venue: 'Auditorium A',
-    },
     'CODE QUEST': {
-      title: 'CODE QUEST',
+      title: 'Code Quest',
       date: '12.09.2025',
-      description: `A competitive programming contest to challenge your skills.`,
+      description: `The IEEE Computer Society of Karunya Institute of Technology and Sciences hosted Code Quest, a competitive C programming challenge conducted as part of the IEEE Day Freshers Event. The contest was held on CodeLab, a student-developed coding platform built by the Division of Computer Science and Engineering. Participants solved real-time programming problems, with their submissions evaluated through multiple test cases and a live leaderboard tracking their progress.
+
+The event aimed to introduce new students to competitive coding and strengthen their programming and problem-solving abilities in C. It provided hands-on experience in a structured environment, helping participants improve their logical reasoning, debugging, and algorithmic thinking while familiarizing them with performance-based evaluation systems.`,
       image: '/CODE QUEST.png',
       participants: 80,
-      venue: 'Lab 3',
+      venue: 'CodeLab Platform (Online)',
+      gallery: [
+        '/CODE QUEST.png',
+      ]
     },
-    'MIND SYNC': {
-      title: 'MIND SYNC',
+    'NETWORK QUEST': {
+      title: 'Network Quest',
       date: '12.09.2025',
-      description: `A seminar on the intersection of neuroscience and AI.`,
+      description: `Network Quest was an interactive treasure-hunt-style event organized by the IEEE Computer Society to test participants’ analytical and problem-solving skills. Teams of four navigated through various checkpoints by scanning QR codes, each unlocking a challenge such as riddles, logic puzzles, or technical questions. Solving one clue revealed the next location, leading teams closer to the final destination.
+
+The event promoted teamwork, quick thinking, and creativity in a fun, gamified setting. Participants enhanced their collaboration, leadership, and communication skills while solving each level’s challenge. The winning team was determined based on both completion time and accuracy.`,
+      image: '/NETWORK QUEST.png',
+      participants: 60,
+      venue: 'Karunya Institute of Technology and Sciences',
+      gallery: [
+        '/NETWORK QUEST.png',
+      ]
+    },
+    'MINDSYNC': {
+      title: 'MINDsync',
+      date: '12.09.2025',
+      description: `As part of the IEEE Freshers’ Day celebrations, the IEEE Computer Society organized MINDsync, a multi-level interactive gaming challenge that encouraged logical thinking and problem-solving. The event included several stages such as a binary memory game, an algorithm pathfinding task, a cybersecurity firewall simulation, and a real-time coding duel.
+
+MINDsync introduced students to key technical concepts like algorithms, AI, and cybersecurity in an engaging and accessible format. The event successfully blended learning with fun, inspiring curiosity among freshers and motivating them to explore the world of computing and technology.`,
       image: '/mindsync.png',
       participants: 150,
       venue: 'Main Hall',
+      gallery: [
+        '/mindsync.png',
+      ]
     },
-    'NETWORK QUEST': {
-      title: 'NETWORK QUEST',
-      date: '12.09.2025',
-      description: `A challenge to solve complex networking problems.`,
-      image: '/NETWORK QUEST.png',
-      participants: 60,
-      venue: 'Lab 5',
-    },
-    'IEEE COMPUTER SOCIETY INAUGURATION CEREMONY': {
-      title: 'IEEE COMPUTER SOCIETY INAUGURATION CEREMONY',
+    'IEEE INAUGURATION 2025': {
+      title: 'IEEE Inauguration 2025',
       date: '12.08.2025',
-      description: `Inauguration ceremony of the IEEE Computer Society.`,
+      description: `The IEEE Computer Society at Karunya Institute of Technology and Sciences held its official inauguration for the 2025 academic year on August 12, 2025, at the Emmanuel Auditorium. The ceremony marked the formal launch of the society’s yearly activities and introduced the newly appointed office bearers. An innovative highlight was a custom-built AI chatbot that served as a co-host, reflecting the society’s focus on practical technology integration.
+
+A cybersecurity demonstration during the event used a simulated phone “hack” to raise awareness about digital safety. The Chief Guest, Dr. Nirmal, delivered an inspiring address, followed by the formal badging of the student leadership team. The inauguration set a strong vision for the chapter, blending academic excellence with innovation and technological responsibility.`,
       image: '/INAUGURATION.png',
       participants: 100,
-      venue: 'Main Hall',
+      venue: 'Emmanuel Auditorium',
+      gallery: [
+        '/INAUGURATION.png',
+        '/IEEE COMPUTER SOCIETY INAUGURATION CEREMONY.jpeg',
+      ]
     },
+    'COMPOSE THE FUTURE': {
+      title: 'Compose the Future',
+      date: '12.09.2025',
+      description: `Compose the Future – The Rise of AI Song Creation was an event exploring the creative potential of Artificial Intelligence in music composition. Participants used AI tools such as Suno AI and Music GPT to generate original songs aligned with the theme “Karunya 4.0: Engineering a Harmonious Future.”
+
+The event gave students hands-on experience with modern AI tools while fostering creativity and technical skills. It demonstrated how AI can support storytelling, music composition, and ethical creativity, emphasizing innovation and originality in digital art.`,
+      image: '/COMPOSE THE FUTURE.png',
+      participants: 120,
+      venue: 'Auditorium A',
+      gallery: [
+        '/COMPOSE THE FUTURE.png',
+      ]
+    },
+    'VISUAL INTELLIGENCE': {
+        title: 'Visual Intelligence',
+        date: '04.09.2025',
+        description: `Visual Intelligence: The Rise of AI in Video Creation was a collaborative event organized by the School of Computer Science and Technology, the IEEE Computer Society, and ACM on September 4, 2025. Participants created AI-generated videos based on themes such as “Life and Legacy of Our Beloved Chancellor” and “AI for Humanity – Solving Global Challenges.” The event began with an expert session on prompt engineering and a live demo of AI video workflows.
+
+The hands-on competition allowed students to apply their creative and technical knowledge to produce impactful, theme-based videos. It enhanced their understanding of AI-driven multimedia tools and visual storytelling, encouraging innovation and digital creativity.`,
+        image: '/VISUAL.png',
+        participants: 90,
+        venue: 'Online',
+        gallery: [
+            '/VISUAL.png',
+        ]
+    }
   };
 
   const event = eventDetails[formattedEventName as keyof typeof eventDetails];
@@ -127,13 +138,19 @@ The interactive environment encouraged peer learning and active participation, a
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <img src={event.image} alt={event.title} className="w-full rounded-lg" />
+            <img src={event.image} alt={event.title} className="w-full rounded-lg mb-8" />
+            <h3 className="text-3xl font-bold mb-4 text-white">Gallery</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {event.gallery.map((img, index) => (
+                <img key={index} src={img} alt={`${event.title} gallery image ${index + 1}`} className="w-full h-auto rounded-lg" />
+              ))}
+            </div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 50 }}

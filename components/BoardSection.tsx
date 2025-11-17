@@ -129,6 +129,10 @@ const MemberPopup = ({
             width={300}
             height={300}
             className="w-full h-auto object-cover rounded-2xl shadow-lg"
+            onError={(e) => {
+                const img = e.target as HTMLImageElement
+                img.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiNlMGUwZTAiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9ImFyaWFsIiBmb250LXNpemU9IjQwIiBmaWxsPSIjY2NjIj5JbWFnZTwvdGV4dD48L3N2Zz4='
+            }}
           />
         </div>
         <div className="w-full md:w-2/3">
@@ -151,37 +155,43 @@ const BoardSection = () => {
     { name: "Dr. J. Immanuel Johnraja", position: "HOD CSE", image: "Immanuel Johnraja - Head Of Division (CSE).jpeg", priority: 1, description: "As the Head of the Computer Science and Engineering department, Dr. J. Immanuel Johnraja inspires academic excellence and innovation. He leads the department's strategic vision, fostering a dynamic learning environment and mentoring faculty and students to advance the field of computing." },
     { name: "Dr. Naveen Sundar", position: "Faculty Counselor", image: "Dr.Naveen Sundar - Faculty Counselor.jpeg", priority: 2, description: "As Faculty Counselor, Dr. Naveen Sundar provides guidance and support to the IEEE student branch. He mentors student leaders, facilitates industry connections, and ensures the branch's activities align with the educational and professional development goals of the members." },
     
-    // Executive Board
-    { name: "Mr. Fanisus R", position: "President", image: "PRESIDENT_Mr_FANISUS_R.jpg", priority: 3, description: "As President, Mr. Fanisus R leads the IEEE Student Chapter, inspiring members to explore computing and emerging technologies. He drives strategic initiatives, organizes workshops and hackathons, and mentors students to build technical skills, collaboration, and a thriving tech community on campus.<br><br>IEEE ID - 100105414" },
-    { name: "Ms. D. Jerlin Seraphina", position: "Chair", image: "CHAIR Ms. D. JERLIN SERAPHINA.jpg", priority: 4, description: "As Chair, Ms. D. Jerlin Seraphina presides over the student branch, guiding its overall direction and initiatives. She fosters a collaborative environment, empowers committee members, and ensures that the branch delivers impactful programs and opportunities for all members.<br><br>IEEE ID - 100131873" },
-    { name: "Ms. Charunetra NR", position: "Vice Chair", image: "VICE CHAIR Ms. CHARUNETRA NR.jpeg", priority: 5, description: "As Vice Chair, Ms. Charunetra NR supports the Chair in leading the student branch and spearheads key initiatives. She focuses on member engagement, program development, and building a vibrant and inclusive community of aspiring engineers and innovators.<br><br>IEEE ID - 101044802" },
-    { name: "Ms. Trina Joan Lynus", position: "Secretary", image: "SECRETARY Ms. TRINA JOAN LYNUS.jpg", priority: 6, description: "As Secretary, Ms. Trina Joan Lynus manages the administrative and organizational aspects of the student branch. She maintains records, facilitates communication, and ensures the smooth execution of meetings and events, playing a vital role in the branch's efficiency.<br><br>IEEE ID - 100036936" },
-    { name: "Mr. Siva Sankar B", position: "Treasurer", image: "TREASURER Mr. SIVA SANKAR B.jpg", priority: 7, description: "As Treasurer, Mr. Siva Sankar B oversees the financial health of the student branch. He manages the budget, tracks expenses, and ensures financial transparency, enabling the branch to fund its various activities and initiatives responsibly.<br><br>IEEE ID - 101508717" },
+    // Executive Committee
+    { name: "Mr. V Sremadukrishna", position: "President & Program Lead", image: "OUTREACH & CSR LEAD Mr. V SREMADUKRISHNA.jpg", priority: 3, description: "As President & Program Lead, Mr. V Sremadukrishna leads the IEEE Student Chapter, curating and organizing a diverse range of technical and professional development programs. He drives strategic initiatives, organizes workshops and hackathons, and mentors students to build technical skills, collaboration, and a thriving tech community on campus." },
+    { name: "Ms. Nandana Nandakumar E N", position: "Chairman", image: "TRAINING AND WORKSHOP LEAD Ms. NANDANA NANDAKUMAR E N.PNG", priority: 4, description: "As Chairman, Ms. Nandana Nandakumar E N presides over the student branch, guiding its overall direction and initiatives. She fosters a collaborative environment, empowers committee members, and ensures that the branch delivers impactful programs and opportunities for all members." },
+    { name: "Ms. Jenefa Jeromi J", position: "Secretary", image: "STUDENT ACTIVITIES COORDINATOR Ms. JENEFA JEROMI J.jpg", priority: 5, description: "As Secretary, Ms. Jenefa Jeromi J manages the administrative and organizational aspects of the student branch. She maintains records, facilitates communication, and ensures the smooth execution of meetings and events, playing a vital role in the branch's efficiency." },
+    // TODO: Add the image for Ms. Shivali
+    { name: "Ms. Shivali", position: "Special Advisor", image: "Ms. SHIVALI.jpeg", priority: 6, description: "As Special Advisor, Ms. Shivali provides strategic guidance and mentorship to the committee, drawing from her experience and expertise to support the chapter's growth and success." },
+    { name: "Ms. Charunetra NR", position: "Vice Chair", image: "VICE CHAIR Ms. CHARUNETRA NR.jpeg", priority: 11, description: "As Past Vice Chair, Ms. Charunetra NR supported the Chair in leading the student branch and spearheaded key initiatives." },
+    { name: "Mr. Siva Sankar B", position: "Treasurer", image: "TREASURER Mr. SIVA SANKAR B.jpg", priority: 12, description: "As Past Treasurer, Mr. Siva Sankar B oversaw the financial health of the student branch." },
+
+    // Domain-Focused Leadership
+    { name: "Mr. Fanisus R", position: "Lead for Product Development", image: "PRESIDENT_Mr_FANISUS_R.jpg", priority: 7, description: "As Lead for Product Development, Mr. Fanisus R spearheads initiatives focused on creating and developing innovative tech products, guiding teams from concept to launch." },
+    { name: "Ms. D. Jerlin Seraphina", position: "Lead for Product Development", image: "CHAIR Ms. D. JERLIN SERAPHINA.jpg", priority: 8, description: "As Lead for Product Development, Ms. D. Jerlin Seraphina co-leads product development projects, fostering a culture of innovation and hands-on learning." },
+    { name: "Ms. Trina Joan Lynus", position: "Lead for Research & Publications", image: "SECRETARY Ms. TRINA JOAN LYNUS.jpg", priority: 9, description: "As Lead for Research & Publications, Ms. Trina Joan Lynus promotes a culture of academic inquiry, guiding members in research projects and scholarly publications." },
+    { name: "Mr. Anto Melvin A", position: "Lead for Research & Publications", image: "PROGRAM LEAD Mr. ANTO MELVIN A.jpeg", priority: 10, description: "As Lead for Research & Publications, Mr. Anto Melvin A co-leads research initiatives, helping students to explore and contribute to the latest advancements in technology." },
+
     
-    // Department Leads
-    { name: "Mr. Madhan T", position: "Web Lead", image: "WEB LEAD Mr. MADHAN T.jpg", priority: 8, description: "As Web Lead, Mr. Madhan T drives the development and maintenance of the student branch's digital presence. He leads the web team to create a user-friendly and informative website, ensuring that the online platform effectively serves the needs of the members and the community.<br><br>IEEE ID - 101511633" },
-    { name: "Mr. Anto Melvin A", position: "Program Lead", image: "PROGRAM LEAD Mr. ANTO MELVIN A.jpeg", priority: 9, description: "As Program Lead, Mr. Anto Melvin A curates and organizes a diverse range of technical and professional development programs. He identifies relevant topics, secures speakers, and designs engaging events that provide valuable learning experiences for members.<br><br>IEEE ID - 101508103" },
-    { name: "Ms. Mershiya", position: "Social Media Lead", image: "SOCIAL MEDIA LEAD Ms. MERSHIYA.jpg", priority: 10, description: "As Social Media Lead, Ms. Mershiya crafts and executes the student branch's social media strategy. She creates engaging content, manages online campaigns, and interacts with the community to build a strong and active presence on various platforms.<br><br>IEEE ID - 101527393" },
-    { name: "Ms. Lizania Dew K", position: "Documentation Lead", image: "DOCUMENTATION LEAD Ms. LIZANIA DEW K.jpg", priority: 11, description: "As Documentation Lead, Ms. Lizania Dew K is responsible for capturing and archiving the student branch's activities and achievements. She ensures that all events, projects, and meetings are well-documented, creating a valuable historical record for the branch.<br><br>IEEE ID - 101523419" },
-    { name: "Ms. Priya Dharshini S", position: "IEEE Interface Lead", image: "IEEE INTERFACE LEAD Ms. PRIYA DHARSHINI S.jpg", priority: 12, description: "As IEEE Interface Lead, Ms. Priya Dharshini S serves as the primary link between the student branch and the broader IEEE organization. She facilitates communication, ensures compliance with IEEE standards, and connects members with global resources and opportunities.<br><br>IEEE ID - 101523479" },
-    { name: "Ms. Jenefa Jeromi J", position: "Student Activities Coordinator", image: "STUDENT ACTIVITIES COORDINATOR Ms. JENEFA JEROMI J.jpg", priority: 13, description: "As Student Activities Coordinator, Ms. Jenefa Jeromi J plans and executes a variety of engaging activities for members. She works to create a vibrant campus community by organizing social events, networking sessions, and other initiatives that enhance the student experience.<br><br>IEEE ID - 101523308" },
-    { name: "Mr. V Sremadukrishna", position: "Outreach & CSR Lead", image: "OUTREACH & CSR LEAD Mr. V SREMADUKRISHNA.jpg", priority: 16, description: "As Outreach & CSR Lead, Mr. V Sremadukrishna spearheads the student branch's community engagement and social responsibility initiatives. He develops and implements programs that leverage technology for social good, fostering a sense of civic duty among members.<br><br>IEEE ID - 100713549" },
-    { name: "Ms. Nandana Nandakumar E N", position: "Training and Workshop Lead", image: "TRAINING AND WORKSHOP LEAD Ms. NANDANA NANDAKUMAR E N.PNG", priority: 17, description: "As Training and Workshop Lead, Ms. Nandana Nandakumar E N designs and delivers hands-on training sessions and workshops. She identifies skill gaps, develops relevant curriculum, and empowers members with practical knowledge and technical expertise.<br><br>IEEE ID - 101537877" },
-    { name: "Mr. Rishi Jayanath A", position: "Innovation and Research Lead", image: "INNOVATION AND RESEARCH LEAD Mr. RISHI JAYANATH A.jpg", priority: 18, description: "As Innovation and Research Lead, Mr. Rishi Jayanath A champions a culture of innovation and inquiry within the student branch. He encourages members to pursue research projects, participate in competitions, and explore emerging technologies to solve real-world problems.<br><br>IEEE ID - 101545539" },
-    { name: "Mr. Johann Shoni George", position: "Sponsorship and Partnership Lead", image: "SPONSORSHIP AND PARTNERSHIP LEAD Mr. JOHANN SHONI GEORGE.jpeg", priority: 19, description: "As Sponsorship and Partnership Lead, Mr. Johann Shoni George builds and maintains relationships with industry partners and sponsors. He secures funding and resources to support the student branch's activities, creating valuable connections between students and the professional world.<br><br>IEEE ID - 100105390" },
-    { name: "Mr. Febin K Renu", position: "Alumni and Industry Relation Lead", image: "ALUMNI AND INDUSTRY RELATION LEAD Mr. FEBIN K RENU.jpeg", priority: 20, description: "As Alumni and Industry Relation Lead, Mr. Febin K Renu fosters a strong network of alumni and industry professionals. He creates mentorship opportunities, organizes networking events, and facilitates career development for students by connecting them with experienced professionals.<br><br>IEEE ID - 101545251" },
-    { name: "Mr. Adwaith Sajikumar", position: "Development Lead", image: "DEVELOPMENT LEAD Mr. ADWAITH SAJIKUMAR.jpg", priority: 21, description: "As Development Lead, Mr. Adwaith Sajikumar oversees the technical projects and software development initiatives of the student branch. He mentors student developers, manages project timelines, and ensures the delivery of high-quality, innovative solutions.<br><br>IEEE ID - 101545482" },
-    { name: "Mr. Harish R", position: "Membership Chair", image: "MEMBERSHIP CHAIR Mr. HARISH R.jpg", priority: 22, description: "As Membership Chair, Mr. Harish R is responsible for the recruitment, retention, and engagement of members. He develops strategies to grow the student branch community and ensures that all members feel welcomed, valued, and connected.<br><br>IEEE ID - 101070229" },
-    { name: "Ms. Rebi Jael B", position: "Women in Engineering Lead", image: "WOMEN IN ENGINEERING LEAD Ms. REBI JAEL B.jpeg", priority: 23, description: "As Women in Engineering Lead, Ms. Rebi Jael B champions the inclusion and advancement of women in technology. She organizes events, mentorship programs, and support networks that empower female students and promote diversity in the engineering field.<br><br>IEEE ID - 101038770" },
-    { name: "Ms. Saro Franzika C S", position: "Technical Event Lead", image: "TECHNICAL EVENT LEAD Ms. SARO FRANZIKA C S.jpeg", priority: 26, description: "As Technical Event Lead, Ms. Saro Franzika C S plans and executes a wide range of technical events, from workshops to hackathons. She is dedicated to providing members with hands-on learning experiences and opportunities to showcase their skills.<br><br>IEEE ID - 101530037" },
-    { name: "Mr. Kingston Y C", position: "Poster and Video Editor", image: "POSTER AND VIDEO EDITOR Mr. KINGSTON Y C.jpg", priority: 27, description: "As Poster and Video Editor, Mr. Kingston Y C is the creative force behind the student branch's visual communications. He designs eye-catching posters, produces engaging videos, and uses his artistic skills to promote events and tell the story of the IEEE community.<br><br>IEEE ID - 101047837" }
+    // Team Leads
+    { name: "Mr. Madhan T", position: "Web Lead", image: "WEB LEAD Mr. MADHAN T.jpg", priority: 13, description: "As Web Lead, Mr. Madhan T drives the development and maintenance of the student branch's digital presence." },
+    { name: "Ms. Mershiya", position: "Social Media Lead", image: "SOCIAL MEDIA LEAD Ms. MERSHIYA.jpg", priority: 14, description: "As Social Media Lead, Ms. Mershiya crafts and executes the student branch's social media strategy." },
+    { name: "Mr. Rishi Jayanath A", position: "Innovation and Research Lead", image: "INNOVATION AND RESEARCH LEAD Mr. RISHI JAYANATH A.jpg", priority: 15, description: "As Innovation and Research Lead, Mr. Rishi Jayanath A champions a culture of innovation and inquiry within the student branch." },
+    { name: "Mr. Johann Shoni George", position: "Sponsorship and Partnership Lead", image: "SPONSORSHIP AND PARTNERSHIP LEAD Mr. JOHANN SHONI GEORGE.jpeg", priority: 16, description: "As Sponsorship and Partnership Lead, Mr. Johann Shoni George builds and maintains relationships with industry partners and sponsors." },
+    { name: "Mr. Febin K Renu", position: "Alumni and Industry Relation Lead", image: "ALUMNI AND INDUSTRY RELATION LEAD Mr. FEBIN K RENU.jpeg", priority: 17, description: "As Alumni and Industry Relation Lead, Mr. Febin K Renu fosters a strong network of alumni and industry professionals." },
+    { name: "Mr. Adwaith Sajikumar", position: "Development Lead", image: "DEVELOPMENT LEAD Mr. ADWAITH SAJIKUMAR.jpg", priority: 18, description: "As Development Lead, Mr. Adwaith Sajikumar oversees the technical projects and software development initiatives of the student branch." },
+    { name: "Mr. Harish R", position: "Membership Chair", image: "MEMBERSHIP CHAIR Mr. HARISH R.jpg", priority: 19, description: "As Membership Chair, Mr. Harish R is responsible for the recruitment, retention, and engagement of members." },
+    { name: "Ms. Rebi Jael B", position: "Women in Engineering Lead", image: "WOMEN IN ENGINEERING LEAD Ms. REBI JAEL B.jpeg", priority: 20, description: "As Women in Engineering Lead, Ms. Rebi Jael B champions the inclusion and advancement of women in technology." },
+    { name: "Ms. Saro Franzika C S", position: "Technical Event Lead", image: "TECHNICAL EVENT LEAD Ms. SARO FRANZIKA C S.jpeg", priority: 21, description: "As Technical Event Lead, Ms. Saro Franzika C S plans and executes a wide range of technical events." },
+    { name: "Mr. Kingston Y C", position: "Poster and Video Editor", image: "POSTER AND VIDEO EDITOR Mr. KINGSTON Y C.jpg", priority: 22, description: "As Poster and Video Editor, Mr. Kingston Y C is the creative force behind the student branch's visual communications." }
   ]
 
   const sortedMembers = boardMembers.sort((a, b) => (a.priority || 0) - (b.priority || 0))
-  const facultyMembers = sortedMembers.filter((m) => m.priority && m.priority <= 2)
-  const studentMembers = sortedMembers.filter((m) => m.priority && m.priority > 2)
-  const executiveMembers = studentMembers.slice(0, 5)
-  const teamLeadMembers = studentMembers.slice(5)
+  const facultyMembers = sortedMembers.filter((m) => m.position.includes('HOD') || m.position.includes('Counselor'))
+  const executiveCommittee = sortedMembers.filter(
+    (m) => (m.priority && m.priority >= 3 && m.priority <= 12 && ![7, 8, 9, 10].includes(m.priority)) 
+  )
+  const domainLeads = sortedMembers.filter((m) => m.priority && m.priority >= 7 && m.priority <= 10)
+  const teamLeads = sortedMembers.filter((m) => m.priority && m.priority > 12 && !m.position.includes('Past'))
+
 
   const openPopup = (member: BoardMember) => {
     setSelectedMember(member)
@@ -230,16 +240,16 @@ const BoardSection = () => {
           </div>
         </motion.div>
 
-        {/* Student Board Section */}
+        {/* Executive Committee Section */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-3xl font-bold text-center mb-8 text-primary">EXECUTIVE BOARD</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-            {executiveMembers.map((member, index) => (
+          <h3 className="text-3xl font-bold text-center mb-8 text-primary">EXECUTIVE COMMITTEE</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {executiveCommittee.map((member, index) => (
               <BoardMemberCard
                 key={`executive-${index}`}
                 member={member}
@@ -250,6 +260,28 @@ const BoardSection = () => {
           </div>
         </motion.div>
 
+        {/* Domain-Focused Leadership Section */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-12"
+        >
+          <h3 className="text-3xl font-bold text-center mb-8 text-primary">DOMAIN-FOCUSED LEADERSHIP</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {domainLeads.map((member, index) => (
+              <BoardMemberCard
+                key={`domain-${index}`}
+                member={member}
+                index={index + facultyMembers.length + executiveCommittee.length}
+                onClick={() => openPopup(member)}
+              />
+            ))}
+          </div>
+        </motion.div>
+        
+        {/* Team Leads Section */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -259,11 +291,11 @@ const BoardSection = () => {
         >
           <h3 className="text-3xl font-bold text-center mb-8 text-primary">TEAM LEADS</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {teamLeadMembers.map((member, index) => (
+            {teamLeads.map((member, index) => (
               <BoardMemberCard
                 key={`team-lead-${index}`}
                 member={member}
-                index={index + facultyMembers.length + executiveMembers.length}
+                index={index + facultyMembers.length + executiveCommittee.length + domainLeads.length}
                 onClick={() => openPopup(member)}
               />
             ))}
