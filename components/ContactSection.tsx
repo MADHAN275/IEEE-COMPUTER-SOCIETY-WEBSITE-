@@ -218,7 +218,7 @@ const ContactSection = () => {
                   <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3">
                     <span className="text-xl">📧</span>
                   </div>
-                  <p className="text-gray-300 text-sm">naveensundar@org</p>
+                  <p className="text-gray-300 text-sm">naveensundar@ieee.org</p>
                 </div>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3">
