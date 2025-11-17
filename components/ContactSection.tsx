@@ -234,41 +234,41 @@ const ContactSection = () => {
               
               <div className="space-y-6">
                 <div className="border-b border-gray-700 pb-4">
-                  <p className="text-white font-semibold text-base">Ms. Fanisus R</p>
-                  <p className="text-primary text-sm mb-2">President</p>
+                  <p className="text-white font-semibold text-base">Mr. V Sremadukrishna</p>
+                  <p className="text-primary text-sm mb-2">President & Program Lead</p>
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-sm">📧</span>
-                    <p className="text-gray-300 text-xs">fanisusr@karunya.edu.in</p>
+                    <p className="text-gray-300 text-xs">sremadukrishna@karunya.edu.in</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-sm">📞</span>
-                    <p className="text-gray-300 text-xs">+91 6382468758</p>
+                    <p className="text-gray-300 text-xs">+91 9363870236</p>
                   </div>
                 </div>
 
                 <div className="border-b border-gray-700 pb-4">
-                  <p className="text-white font-semibold text-base">Ms. D Jerlin Seraphina</p>
-                  <p className="text-primary text-sm mb-2">Chair</p>
+                  <p className="text-white font-semibold text-base">Ms. Nandana Nandakumar E N</p>
+                  <p className="text-primary text-sm mb-2">Chairman</p>
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-sm">📧</span>
-                    <p className="text-gray-300 text-xs">djerlin@karunya.edu.in</p>
+                    <p className="text-gray-300 text-xs">nandananandakumar@karunya.edu.in</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-sm">📞</span>
-                    <p className="text-gray-300 text-xs">+91 9384423577</p>
+                    <p className="text-gray-300 text-xs">+91 9496788478</p>
                   </div>
                 </div>
 
                 <div>
-                  <p className="text-white font-semibold text-base">Mr. Madhan T</p>
-                  <p className="text-primary text-sm mb-2">Web Lead</p>
+                  <p className="text-white font-semibold text-base">Ms. Jenefa Jeromi J</p>
+                  <p className="text-primary text-sm mb-2">Secretary</p>
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-sm">📧</span>
-                    <p className="text-gray-300 text-xs">madhant@karunya.edu.in</p>
+                    <p className="text-gray-300 text-xs">jenifajeromi@karunya.edu.in</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-sm">📞</span>
-                    <p className="text-gray-300 text-xs">+91 9080688119</p>
+                    <p className="text-gray-300 text-xs">+91 9345899482</p>
                   </div>
                 </div>
               </div>
