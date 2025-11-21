@@ -238,7 +238,7 @@ const ContactSection = () => {
                   <p className="text-primary text-sm mb-2">President & Program Lead</p>
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-sm">📧</span>
-                    <p className="text-gray-300 text-xs">sremadukrishna@karunya.edu.in</p>
+                    <p className="text-gray-300 text-xs">sremadukrishnav@karunya.edu.in</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-sm">📞</span>

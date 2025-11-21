@@ -11,32 +11,32 @@ const EventsSection = () => {
     {
       title: "VISUAL INTELLIGENCE",
       date: "04.09.2025",
-      image: "/VISUAL.png"
+      image: "/images/events/VISUAL.png"
     },
     {
       title: "COMPOSE THE FUTURE",
       date: "12.09.2025",
-      image: "/COMPOSE THE FUTURE.png"
+      image: "/images/events/COMPOSE THE FUTURE.png"
     },
     {
       title: "CODE QUEST",
       date: "12.09.2025",
-      image: "/CODE QUEST.png"
+      image: "/images/events/CODE QUEST.png"
     },
     {
       title: "MINDSYNC",
       date: "12.09.2025",
-      image: "/mindsync.png"
+      image: "/images/events/mindsync.png"
     },
     {
       title: "NETWORK QUEST",
       date: "12.09.2025",
-      image: "/NETWORK QUEST.png"
+      image: "/images/events/NETWORK QUEST.png"
     },
     {
       title: "IEEE INAUGURATION 2025",
       date: "12.08.2025",
-      image: "/INAUGURATION.png"
+      image: "/images/events/INAUGURATION.png"
     }
   ];
 
